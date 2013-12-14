@@ -10,6 +10,6 @@ import re
 # then any number of consonants, then e, and so on and so forth...
 consonants = 'bcdfghjlkmnpqrstvwxyz'
 
-lowercase_re = re.compile('[{c}]*a[{c}]*e[{c}]*i[{c}]*o[{c}]*u[{c}]'.format(
+lowercase_re = re.compile('[{c}]*a+[{c}]*e+[{c}]*i+[{c}]*o+[{c}]*u+[{c}]'.format(
                             c=consonants))
 
