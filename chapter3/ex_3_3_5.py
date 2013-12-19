@@ -26,4 +26,9 @@ lowercase_re = re.compile('[{c}]*a+[{c}]*e+[{c}]*i+[{c}]*o+[{c}]*u+[{c}]'.format
 # c_def -> b|c*
 # etc.
 # Sigma is {}.
-lex_asc_re = re.compile('a*b*c*d*e*f*g*h*i*j*k*l*m*n*o*p*q*r*s*t*u*v*w*x*y*z*')
+lex_asc_re = re.compile(''.join( [a + '*' for a in string.ascii_lowercase] ))
+
+# c) Comments, consisting of a string surrounded by /* and */, without 
+# an intervening */, unless it is inside double-quotes (").
+
+comments_re = re.compile('/*(.|"\\*")* */')
